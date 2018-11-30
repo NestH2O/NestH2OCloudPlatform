@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "781743476253",
+    "firebase_url": "https://nesth2ocloudplatform.firebaseio.com",
+    "project_id": "nesth2ocloudplatform",
+    "storage_bucket": "nesth2ocloudplatform.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781743476253:android:b5a93c2ad077e5df",
+        "android_client_info": {
+          "package_name": "com.nesth2o.watersystem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781743476253-3htd18me18tlsd2s5i45rnr8p793skeb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nesth2o.watersystem",
+            "certificate_hash": "0b436925ceea43b20aebd6933861f60e85f15ab1"
+          }
+        },
+        {
+          "client_id": "781743476253-tkt79ti264a9rukt38jsq6n93tjq9n96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFAhejrkwRbuX6XlAPKM-hvZt4-bvuCJc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781743476253-tkt79ti264a9rukt38jsq6n93tjq9n96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_water_bg"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/transparent_rectangle">
+        <TextView
+            android:id="@+id/tv_tapName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/arduino_functionality"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginEnd="8dp"
+            android:textSize="17sp"
+            android:textStyle="bold|italic" />
+        <TextView
+            android:id="@+id/tv_tapValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/background_dark"
+            android:layout_marginStart="8dp"
+            android:textSize="17sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="3dp"
+            android:text="@string/gauge_prompt"
+            android:textColor="@color/colorDarkBlue"
+            android:textSize="17sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_info"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="55dp">
+
+        <ScrollView
+            android:id="@+id/sv_gauge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_gauge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/radioGroupBg"
+                    android:padding="15dp">
+
+                    <RadioButton
+                        android:id="@+id/_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/close"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorDarkBlue" />
+
+                    <RadioButton
+                        android:id="@+id/_10DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open10" />
+
+                    <RadioButton
+                        android:id="@+id/_20DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open20" />
+
+                    <RadioButton
+                        android:id="@+id/_30DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open30" />
+
+                    <RadioButton
+                        android:id="@+id/_40DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open40" />
+
+                    <RadioButton
+                        android:id="@+id/_50DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open50" />
+
+                    <RadioButton
+                        android:id="@+id/_60DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open60" />
+
+                    <RadioButton
+                        android:id="@+id/_70DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open70" />
+
+                    <RadioButton
+                        android:id="@+id/_80DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open80" />
+
+                    <RadioButton
+                        android:id="@+id/_90DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open90"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/_100DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open100" />
+
+                    <RadioButton
+                        android:id="@+id/_110DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open110" />
+
+                    <RadioButton
+                        android:id="@+id/_120DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open120" />
+
+                    <RadioButton
+                        android:id="@+id/_130DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open130" />
+
+                    <RadioButton
+                        android:id="@+id/_140DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open140" />
+
+                    <RadioButton
+                        android:id="@+id/_150DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open150" />
+
+                    <RadioButton
+                        android:id="@+id/_160DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open160" />
+
+                    <RadioButton
+                        android:id="@+id/_170DegOP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open170" />
+
+                    <RadioButton
+                        android:id="@+id/_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/open"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/holo_red_dark" />
+
+                    <!--<RadioButton
+                        android:id="@+id/_10DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL10" />
+
+                    <RadioButton
+                        android:id="@+id/_20DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL20" />
+
+                    <RadioButton
+                        android:id="@+id/_30DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL30" />
+
+                    <RadioButton
+                        android:id="@+id/_40DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL40" />
+
+                    <RadioButton
+                        android:id="@+id/_50DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL50" />
+
+                    <RadioButton
+                        android:id="@+id/_60DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL60" />
+
+                    <RadioButton
+                        android:id="@+id/_70DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL70" />
+
+                    <RadioButton
+                        android:id="@+id/_80DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL80" />
+
+                    <RadioButton
+                        android:id="@+id/_90DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL90" />
+
+                    &lt;!&ndash;android:checked="true"&ndash;&gt;
+
+                    <RadioButton
+                        android:id="@+id/_100DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL100" />
+
+                    <RadioButton
+                        android:id="@+id/_110DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL110" />
+
+                    <RadioButton
+                        android:id="@+id/_120DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL120" />
+
+                    <RadioButton
+                        android:id="@+id/_130DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL130" />
+
+                    <RadioButton
+                        android:id="@+id/_140DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL140" />
+
+                    <RadioButton
+                        android:id="@+id/_150DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL150" />
+
+                    <RadioButton
+                        android:id="@+id/_160DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL160" />
+
+                    <RadioButton
+                        android:id="@+id/_170DegCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CL170" />-->
+
+                </RadioGroup>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="@string/get_selected_guage"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</RelativeLayout>

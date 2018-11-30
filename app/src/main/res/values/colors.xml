@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorDarkBlue">#0000ff</color>
+    <color name="colorPrimary">#5489c6</color>
+    <color name="colorPrimaryDark">#5489c6</color>
+    <color name="colorAccent">#5ea0c9</color>
+    <color name="webViewBg">#a0e0f0</color>
+    <color name="radioGroupBg">#dbeceb</color>
+</resources>

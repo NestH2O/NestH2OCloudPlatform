@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:text="@string/shower_room"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
+<!--        <Button
+            android:id="@+id/btnBgSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:padding="8dp"
+            android:src="@drawable/transparent_rectangle"
+            android:text="Colored Selector" />-->
+
+
+        <ImageButton
+            android:id="@+id/imgBtnShower"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_margin="8dp"
+            android:background="@android:color/darker_gray"
+            android:padding="1dp"
+            android:clickable="true"
+            android:onClick="showerClicked"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_shower" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:text="@string/bath_room_sink"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:background="@drawable/transparent_rectangle">
+
+            <ImageButton
+                android:id="@+id/btnColdWater"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@android:color/transparent"
+                android:padding="8dp"
+                android:clickable="true"
+                android:onClick="showerClicked"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_cold_tap" />
+
+            <ImageButton
+                android:id="@+id/btnHotWater"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@android:color/transparent"
+                android:padding="8dp"
+                android:clickable="true"
+                android:onClick="showerClicked"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_hot_tap" />
+
+
+<!--            <Button
+                android:id="@+id/btnColdWater"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/colorDarkBlue"
+                android:padding="8dp"
+                android:text="@string/cold_water_tap"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:id="@+id/btnHotWater"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:padding="8dp"
+                android:text="@string/hot_water_tap"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="7dp"/>-->
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_leakContainer"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/ic_leak"
+        android:backgroundTint="@color/radioGroupBg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/water_leak"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+        <TextView
+            android:id="@+id/leakDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/leakDescription"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+    </LinearLayout>
+
+</RelativeLayout>
+
