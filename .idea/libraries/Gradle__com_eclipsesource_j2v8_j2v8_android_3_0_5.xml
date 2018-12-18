@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.eclipsesource.j2v8:j2v8_android-3.0.5">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/j2v8_android-3.0.5.aar/763cf741656b73167eaa51c89210b089/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/j2v8_android-3.0.5.aar/763cf741656b73167eaa51c89210b089/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

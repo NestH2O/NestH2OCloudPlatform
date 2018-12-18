@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NestH2O Cloud Platform</string>
+    <string name="app_name">NestH2O</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
@@ -8,6 +8,7 @@
     <string name="select_country">select country</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="users">Users</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="email_user">User Email:</string>
@@ -21,12 +22,13 @@
     <string name="bathroom1">Bathroom 1</string>
     <string name="bathroom2">Bathroom 2</string>
     <string name="kitchen">Kitchen</string>
-    <string name="shower_room">Shower Room</string>
-    <string name="bath_room_sink">Bath Room Sink</string>
+    <string name="yard_tap">Yard Tap</string>
+    <string name="shower_room">Shower</string>
+    <string name="bath_room_sink">Bathroom Sink</string>
     <string name="cold_water_tap">Cold Water Tap</string>
     <string name="hot_water_tap">Hot Water Tap</string>
     <string name="water_leak">Leak Detected</string>
-    <string name="leakDetection">LeakDetection</string>
+    <string name="leakDetection">Leak Detection</string>
     <string name="leakDescription">Alert! %s</string>
     <string name="gauge_prompt">What do you prefer?</string>
     <string name="get_selected_guage">Select</string>
@@ -54,4 +56,14 @@
     <string name="agree">Agree</string>
     <string name="user_agreement">user agreement</string>
     <string name="arduino_functionality">ARDUINO Functionality</string>
+    <string name="water_saving">Water Saving</string>
+    <string name="carousel_taps">Carousel Taps</string>
+    <string name="water_price">Water Price</string>
+    <string name="water_price_calculations">Water Price Calculations:</string>
+    <string name="water_flow">Water Flow</string>
+    <string name="water_flow_calculations">Water Flow Calculations:</string>
+    <string name="water_saving_calculations">Water Saving Calculations:</string>
+    <string name="control_panel">Control Panel</string>
+    <string name="flow_gpm">%s gpm</string>
+    <string name="gpm">\u0020 gpm</string>
 </resources>

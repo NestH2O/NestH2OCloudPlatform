@@ -6,6 +6,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.eclipsesource.v8.V8
+
+
 
 open class BaseActivity  : AppCompatActivity() {
 
@@ -38,4 +41,62 @@ open class BaseActivity  : AppCompatActivity() {
 
     private fun logout() {
     }
+
+/*    private fun generateNodes() {
+        val runtime = V8.createV8Runtime()
+        runtime.executeVoidScript(""
+            + "var http = require('http');\n"
+            + "var express = require('express');\n"
+            + "var RED = require('node-red');\n"
+            + "var app = express();\n"
+            + "app.use(\"/\",express.static(\"public\"));\n"
+            + "var server = http.createServer(app);\n"
+            + "var settings = {\n" +
+                    "            httpAdminRoot:\"/red\",\n" +
+                    "            httpNodeRoot: \"/api\",\n" +
+                    "            userDir:\"/home/nol/.nodered/\",\n" +
+                    "            functionGlobalContext: { }    // enables global context\n" +
+                    "        };\n"
+            + "RED.init(server,settings);\n"
+            + "app.use(settings.httpAdminRoot,RED.httpAdmin);\n"
+            + "app.use(settings.httpNodeRoot,RED.httpNode);\n"
+            + "server.listen(8000);\n"
+            + "RED.start();\n")
+        runtime.release();
+    }*/
+
+    fun replaceSpacesInString(word: String) : String {
+        //return word.replace("\\s+", "_").toLowerCase().capitalize()
+        //return word.replace(" ", "_").toLowerCase()
+
+        var myString = word.split(' ').joinToString("") { it.capitalize() }
+        return Character.toLowerCase(myString[0]) + myString.substring(1)
+    }
+
+
+// Create an Express app
+
+
+// Add a simple route for static content served from 'public'
+
+
+// Create a server
+
+
+// Create the settings object - see default settings.js file for other options
+
+
+// Initialise the runtime with a server and settings
+
+
+// Serve the editor UI from /red
+
+
+// Serve the http nodes UI from /api
+
+
+
+
+// Start the runtime
+
 }

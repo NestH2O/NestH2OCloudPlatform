@@ -47,6 +47,8 @@
         <activity android:name="com.nesth2o.watersystem.AvailableDevicesActivity" />
         <activity android:name="com.nesth2o.watersystem.FunctionalDevicesActivity" />
         <activity android:name="com.nesth2o.watersystem.ForgotPasswordActivity" />
+        <activity android:name="com.nesth2o.watersystem.CarouselsActivity" />
+        <activity android:name="com.nesth2o.watersystem.FunctionalCarouselActivity" />
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

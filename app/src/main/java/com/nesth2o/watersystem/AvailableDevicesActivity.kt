@@ -14,13 +14,13 @@ class AvailableDevicesActivity : BaseActivity(), View.OnClickListener {
     companion object {
         val TAP_KEY = "TAP_KEY"
     }
+
+    private var imgBtn_YardTap: ImageButton? = null
     private var imgBtn_Shower: ImageButton? = null
     private var btn_ColdWate: ImageButton? = null
     private var btn_HotWate: ImageButton? = null
     private var tv_LeakDetection: TextView? = null
-    private var tv_leakDescription: TextView? = null
     private var leakDetection: String? = null
-
     private var ll_leak: LinearLayout? = null
 
     lateinit var userId : String
@@ -45,15 +45,17 @@ class AvailableDevicesActivity : BaseActivity(), View.OnClickListener {
 
         mAuth = FirebaseAuth.getInstance()
         userId = mAuth!!.currentUser!!.uid
+        //userId = "0YCQSco7T4YW5hQCZDhh5leCHjw2"
         currentUserDb = mDatabaseReference!!.child(userId)
+        imgBtn_YardTap = findViewById(R.id.imgBtnYard)
+        imgBtn_Shower = findViewById(R.id.imgBtnShower)
+        btn_ColdWate = findViewById(R.id.btnColdWater)
+        btn_HotWate = findViewById(R.id.btnHotWater)
+        tv_LeakDetection = findViewById(R.id.leakDescription)
+        ll_leak =  findViewById(R.id.ll_leakContainer)
+        leakDetection =  replaceSpacesInString(resources.getString(R.string.leakDetection))
 
-        imgBtn_Shower = findViewById(R.id.imgBtnShower) as ImageButton
-        btn_ColdWate = findViewById(R.id.btnColdWater) as ImageButton
-        btn_HotWate = findViewById(R.id.btnHotWater) as ImageButton
-        tv_LeakDetection = findViewById(R.id.leakDescription) as TextView
-        ll_leak =  findViewById(R.id.ll_leakContainer) as LinearLayout
-        leakDetection =  resources.getString(R.string.leakDetection) as String
-
+        imgBtn_YardTap!!.setOnClickListener(this)
         imgBtn_Shower!!.setOnClickListener(this)
         btn_ColdWate!!.setOnClickListener(this)
         btn_HotWate!!.setOnClickListener(this)
@@ -61,7 +63,9 @@ class AvailableDevicesActivity : BaseActivity(), View.OnClickListener {
 
         currentUserDb.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-
+                //currentUserDb.child(resources.getString(R.string.email).toLowerCase()).setValue("roman.edjlali@gmail.com")
+                //currentUserDb.child("firstName").setValue("Roman")
+                //currentUserDb.child("lastName").setValue("Edjlali")
                 if (snapshot.child(leakDetection!!).exists() && (snapshot.child(leakDetection!!).value).toString().isNotEmpty()) {
                     tv_LeakDetection?.text = String.format(resources.getString(R.string.leakDescription), (snapshot.child(leakDetection!!).value).toString())
                     //tv_LeakDetection?.text = snapshot.child(leakDetection!!).value as String
@@ -81,8 +85,11 @@ class AvailableDevicesActivity : BaseActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-        val intent = Intent(this@AvailableDevicesActivity, FunctionalDevicesActivity::class.java)
+        //val intent = Intent(this@AvailableDevicesActivity, FunctionalDevicesActivity::class.java)
+        val intent = Intent(this@AvailableDevicesActivity, FunctionalCarouselActivity::class.java)
         when (v!!.id) {
+
+            R.id.imgBtnYard -> intent.putExtra(TAP_KEY, R.id.imgBtnYard)
             R.id.imgBtnShower -> intent.putExtra(TAP_KEY, R.id.imgBtnShower)
             R.id.btnColdWater -> intent.putExtra(TAP_KEY, R.id.btnColdWater)
             R.id.btnHotWater -> intent.putExtra(TAP_KEY, R.id.btnHotWater)

@@ -7,10 +7,11 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_yard_tap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
@@ -19,21 +20,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|left"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="27dp"
+            android:text="@string/yard_tap"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
+        <ImageButton
+            android:id="@+id/imgBtnYard"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/transparent_rectangle"
+            android:clickable="true"
+            android:onClick="yardTapClicked"
+            android:paddingTop="3dp"
+            android:paddingRight="6dp"
+            android:paddingLeft="3dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_yard_tap" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_shower_tap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_yard_tap"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="25dp"
             android:text="@string/shower_room"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold|italic" />
 
-<!--        <Button
-            android:id="@+id/btnBgSelector"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:padding="8dp"
-            android:src="@drawable/transparent_rectangle"
-            android:text="Colored Selector" />-->
+        <!--        <Button
+                    android:id="@+id/btnBgSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/darker_gray"
+                    android:padding="8dp"
+                    android:src="@drawable/transparent_rectangle"
+                    android:text="Colored Selector" />-->
 
 
         <ImageButton
@@ -41,10 +77,10 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_margin="8dp"
-            android:background="@android:color/darker_gray"
-            android:padding="1dp"
+            android:background="@drawable/transparent_rectangle"
             android:clickable="true"
             android:onClick="showerClicked"
+            android:padding="15dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_shower" />
 
@@ -52,10 +88,11 @@
 
 
     <LinearLayout
+        android:id="@+id/ll_sink_tap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_shower_tap"
         android:gravity="center_horizontal"
-        android:layout_centerInParent="true"
         android:orientation="horizontal">
 
         <TextView
@@ -63,29 +100,31 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|left"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:gravity="center"
             android:text="@string/bath_room_sink"
             android:textColor="@android:color/black"
-            android:gravity="center"
             android:textSize="18sp"
             android:textStyle="bold|italic" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginRight="15dp"
-            android:orientation="vertical"
-            android:background="@drawable/transparent_rectangle">
+            android:background="@drawable/transparent_rectangle"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/btnColdWater"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:background="@android:color/transparent"
-                android:padding="8dp"
                 android:clickable="true"
                 android:onClick="showerClicked"
+                android:padding="8dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_cold_tap" />
 
@@ -95,32 +134,32 @@
                 android:layout_height="80dp"
                 android:layout_margin="8dp"
                 android:background="@android:color/transparent"
-                android:padding="8dp"
                 android:clickable="true"
                 android:onClick="showerClicked"
+                android:padding="8dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_hot_tap" />
 
 
-<!--            <Button
-                android:id="@+id/btnColdWater"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@color/colorDarkBlue"
-                android:padding="8dp"
-                android:text="@string/cold_water_tap"
-                android:textColor="@android:color/white"/>
+            <!--            <Button
+                            android:id="@+id/btnColdWater"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:background="@color/colorDarkBlue"
+                            android:padding="8dp"
+                            android:text="@string/cold_water_tap"
+                            android:textColor="@android:color/white"/>
 
-            <Button
-                android:id="@+id/btnHotWater"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/holo_red_dark"
-                android:padding="8dp"
-                android:text="@string/hot_water_tap"
-                android:textColor="@android:color/white"
-                android:layout_marginBottom="7dp"/>-->
+                        <Button
+                            android:id="@+id/btnHotWater"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/holo_red_dark"
+                            android:padding="8dp"
+                            android:text="@string/hot_water_tap"
+                            android:textColor="@android:color/white"
+                            android:layout_marginBottom="7dp"/>-->
         </LinearLayout>
     </LinearLayout>
 
@@ -128,9 +167,10 @@
         android:id="@+id/ll_leakContainer"
         android:layout_width="match_parent"
         android:layout_height="135dp"
+        android:layout_below="@+id/ll_sink_tap"
         android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
-        android:layout_marginRight="12dp"
         android:background="@drawable/ic_leak"
         android:backgroundTint="@color/radioGroupBg"
         android:orientation="vertical">
@@ -138,21 +178,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:text="@string/water_leak"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18sp"
-            android:textStyle="bold|italic"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+            android:textStyle="bold|italic" />
 
         <TextView
             android:id="@+id/leakDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:text="@string/leakDescription"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold|italic"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+            android:textStyle="bold|italic" />
     </LinearLayout>
 
 </RelativeLayout>

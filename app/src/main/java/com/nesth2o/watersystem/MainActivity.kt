@@ -23,7 +23,8 @@ class MainActivity : BaseActivity() {
     private var btnBathroom1: Button? = null
     private var btnBathroom2: Button? = null
     private var btnKitchen: Button? = null
-
+    private var firstName:String? = null
+    private var lastName:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,13 +36,16 @@ class MainActivity : BaseActivity() {
         mDatabase = FirebaseDatabase.getInstance()
         mDatabaseReference = mDatabase!!.reference.child("Users")
         mAuth = FirebaseAuth.getInstance()
-        tvFirstName = findViewById<View>(R.id.tv_first_name) as TextView
-        tvLastName = findViewById<View>(R.id.tv_last_name) as TextView
-        tvEmail = findViewById<View>(R.id.tv_email) as TextView
-        tvEmailVerifiied = findViewById<View>(R.id.tv_email_verifiied) as TextView
-        btnBathroom1 = findViewById<View>(R.id.btn_bathroom1) as Button
-        btnBathroom2 = findViewById<View>(R.id.btn_bathroom2) as Button
-        btnKitchen = findViewById<View>(R.id.btn_kitchen) as Button
+        tvFirstName = findViewById(R.id.tv_first_name)
+        tvLastName = findViewById(R.id.tv_last_name)
+        tvEmail = findViewById(R.id.tv_email)
+        tvEmailVerifiied = findViewById(R.id.tv_email_verifiied)
+        btnBathroom1 = findViewById(R.id.btn_bathroom1)
+        btnBathroom2 = findViewById(R.id.btn_bathroom2)
+        btnKitchen = findViewById(R.id.btn_kitchen)
+        firstName = replaceSpacesInString((resources.getString(R.string.first_name)))
+        lastName = replaceSpacesInString((resources.getString(R.string.last_name)))
+
         btnBathroom1!!.setOnClickListener {
             val intent = Intent(this@MainActivity, AvailableDevicesActivity::class.java)
             startActivity(intent)
@@ -53,6 +57,8 @@ class MainActivity : BaseActivity() {
 
         btnKitchen!!.setOnClickListener {
             //todo
+            val intent = Intent(this@MainActivity, CarouselsActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -64,8 +70,8 @@ class MainActivity : BaseActivity() {
         tvEmailVerifiied!!.text = mUser.isEmailVerified.toString()
         mUserReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                tvFirstName!!.text = snapshot.child("FirstName").value.toString()
-                tvLastName!!.text = snapshot.child("LastName").value.toString()
+                tvFirstName!!.text = snapshot.child(firstName!!).value.toString()
+                tvLastName!!.text = snapshot.child(lastName!!).value.toString()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}

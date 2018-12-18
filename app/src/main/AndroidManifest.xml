@@ -28,6 +28,8 @@
         <activity android:name=".AvailableDevicesActivity" />
         <activity android:name=".FunctionalDevicesActivity" />
         <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".CarouselsActivity" />
+        <activity android:name=".FunctionalCarouselActivity" />
     </application>
 
 </manifest>

@@ -43,6 +43,7 @@ class FunctionalDevicesActivity : BaseActivity() {
     lateinit var rad160DegOP: RadioButton
     lateinit var rad170DegOP: RadioButton
     lateinit var radOpen: RadioButton
+    val tapName:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +59,7 @@ class FunctionalDevicesActivity : BaseActivity() {
         }
 
         // Get radio group selected status and text using button click event
-        button.setOnClickListener {
+        btn_select_gauge.setOnClickListener {
             // Get the checked radio button id from radio group
             val id = radio_group.checkedRadioButtonId
             if (id != -1) { // If any radio button checked from radio group
@@ -86,19 +87,21 @@ class FunctionalDevicesActivity : BaseActivity() {
         userId = mAuth!!.currentUser!!.uid
         currentUserDb = mDatabaseReference!!.child(userId)
 
-        tvTapName = findViewById<View>(R.id.tv_tapName) as TextView
-        tvTapValue = findViewById<View>(R.id.tv_tapValue) as TextView
+        tvTapName = findViewById(R.id.tv_tapName)
+        tvTapValue = findViewById(R.id.tv_tapValue)
         val intent = getIntent()
         tapValue = intent.getIntExtra(AvailableDevicesActivity.TAP_KEY, 0)
         when (tapValue) {
-            R.id.imgBtnShower -> tvTapName.text = (resources.getString(R.string.shower_room))
-            R.id.btnColdWater -> tvTapName.text = (resources.getString(R.string.cold_water_tap))
-            R.id.btnHotWater -> tvTapName.text = (resources.getString(R.string.hot_water_tap))
+
+            R.id.imgBtnYard     -> tvTapName.text = resources.getString(R.string.yard_tap)
+            R.id.imgBtnShower   -> tvTapName.text = resources.getString(R.string.shower_room)
+            R.id.btnColdWater   -> tvTapName.text = resources.getString(R.string.cold_water_tap)
+            R.id.btnHotWater    -> tvTapName.text = resources.getString(R.string.hot_water_tap)
         }
         currentUserDb.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.child(tvTapName.text as String).exists())
-                    tvTapValue.text = (snapshot.child(tvTapName.text as String).value).toString()
+                if (snapshot.child(replaceSpacesInString((tvTapName.text).toString())).exists())
+                    tvTapValue.text = (snapshot.child(replaceSpacesInString((tvTapName.text).toString())).value).toString()
                 //radio.text = snapshot?.child(radio.text as String).value.toString()
 
             }
@@ -126,19 +129,24 @@ class FunctionalDevicesActivity : BaseActivity() {
         rad170DegOP = findViewById<View>(R.id._170DegOP) as RadioButton
         radOpen = findViewById<View>(R.id._open) as RadioButton
 
-        when (tapValue) {
-            R.id.imgBtnShower -> tvTapName.text = (resources.getString(R.string.shower_room))
-            R.id.btnColdWater -> tvTapName.text = (resources.getString(R.string.cold_water_tap))
-            R.id.btnHotWater -> tvTapName.text = (resources.getString(R.string.hot_water_tap))
-        }
+        /*when (tapValue) {
+
+            R.id.imgBtnYard     -> tvTapName.text = resources.getString(R.string.yard_tap)
+            R.id.imgBtnShower   -> tvTapName.text = resources.getString(R.string.shower_room)
+            R.id.btnColdWater   -> tvTapName.text = resources.getString(R.string.cold_water_tap)
+            R.id.btnHotWater    -> tvTapName.text = resources.getString(R.string.hot_water_tap)
+        }*/
 
     }
 
     fun saveDataInFirebase() {
-        currentUserDb.child(tvTapName.text as String).setValue(radio.text)
+        currentUserDb.child(replaceSpacesInString((tvTapName.text).toString()) as String).setValue(radio.text)
         //radio
         Toast.makeText(applicationContext, "${radio.text} selected!",
                 Toast.LENGTH_SHORT).show()
 
     }
+
+
+
 }

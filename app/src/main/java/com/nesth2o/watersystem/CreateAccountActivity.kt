@@ -50,14 +50,14 @@ class CreateAccountActivity : BaseActivity() {
     private fun initialise() {
         //Analytics
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
-        etFirstName = findViewById<View>(R.id.et_first_name) as EditText
-        etLastName = findViewById<View>(R.id.et_last_name) as EditText
-        etEmail = findViewById<View>(R.id.et_email) as EditText
-        etPassword = findViewById<View>(R.id.et_password) as EditText
-        btnCreateAccount = findViewById<View>(R.id.btn_register) as Button
+        etFirstName = findViewById(R.id.et_first_name)
+        etLastName = findViewById(R.id.et_last_name)
+        etEmail = findViewById(R.id.et_email)
+        etPassword = findViewById(R.id.et_password)
+        btnCreateAccount = findViewById(R.id.btn_register)
         mProgressBar = ProgressDialog(this)
         mDatabase = FirebaseDatabase.getInstance()
-        mDatabaseReference = mDatabase!!.reference.child("Users")
+        mDatabaseReference = mDatabase!!.reference.child(resources.getString(R.string.users))
         mAuth = FirebaseAuth.getInstance()
         btnCreateAccount!!.setOnClickListener { createNewAccount() }
     }
@@ -90,8 +90,12 @@ class CreateAccountActivity : BaseActivity() {
                 verifyEmail()
                 //update user profile information
                 val currentUserDb = mDatabaseReference!!.child(userId)
-                currentUserDb.child("FirstName").setValue(firstName)
-                currentUserDb.child("LastName").setValue(lastName)
+
+                currentUserDb.child(replaceSpacesInString(resources.getString(R.string.email))).setValue(email)
+                currentUserDb.child(replaceSpacesInString((resources.getString(R.string.first_name)))).setValue(firstName)
+                currentUserDb.child(replaceSpacesInString((resources.getString(R.string.last_name)))).setValue(lastName)
+
+
                 updateUserInfoAndUI()
             } else {
                 // If sign in fails, display a message to the user.

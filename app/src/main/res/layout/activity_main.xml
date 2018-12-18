@@ -97,7 +97,7 @@
             android:id="@+id/btn_kitchen"
             style="@style/ViewCustom"
             android:background="@android:color/holo_red_dark"
-            android:text="@string/kitchen"
+            android:text="@string/carousel_taps"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:typeface="serif" />
